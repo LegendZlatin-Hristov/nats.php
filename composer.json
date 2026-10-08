@@ -1,6 +1,6 @@
 {
-    "name": "mperusso/nats",
-    "description": "nats jetstream client for php compatible with php 7.3",
+    "name": "oddspedia/nats-php74",
+    "description": "NATS JetStream client for PHP 7.3+ (fork of basis-company/nats 0.24)",
     "keywords": ["nats", "client", "streaming", "jetstream", "queue", "messaging", "subscribe", "publish", "request", "response", "bucket", "key-value", "storage"],
     "require": {
         "php": ">=7.3",
@@ -26,6 +26,9 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
+    },
+    "replace": {
+        "mperusso/nats": "self.version"
     },
     "conflict": {
         "basis-company/nats": "*"

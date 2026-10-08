@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Basis\Nats\Message;
 
-use InvalidArgumentException;
-
 abstract class Prototype
 {
     abstract public function render(): string;
@@ -29,7 +27,7 @@ abstract class Prototype
 
         foreach ($values as $k => $v) {
             if (!property_exists($this, $k)) {
-                throw new InvalidArgumentException("Invalid property $k for message " . get_class($this));
+                continue; // newer servers may send fields this client version does not know
             }
             $this->$k = $v;
         }
