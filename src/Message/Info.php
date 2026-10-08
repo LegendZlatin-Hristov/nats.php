@@ -35,6 +35,7 @@ class Info extends Prototype
     public $ip;
     public $nonce;
     public $xkey;
+    public $api_lvl;
 
     public function render(): string
     {
